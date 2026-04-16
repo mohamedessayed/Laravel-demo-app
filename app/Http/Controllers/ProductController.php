@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Demo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,6 +13,40 @@ class ProductController extends Controller
      */
     public function index()
     {
+
+        // Demo::create([
+
+        // 'product_name' => 'inserted from laravel using model',
+        // 'price'=> 10,
+        // 'description' => 'lorem apsum',
+        // 'stock' => 12,
+
+        // ]);
+
+        // $product =  Demo::findOrFail(9);
+
+        // $product->update([
+        //     'price' => 100
+        // ]);
+
+        // $product =  Demo::where('id','=',9)->first();
+
+        $product =  Demo::findOrFail(9);
+
+        $product->delete();
+
+        $tableData = Demo::get();
+
+        // dd($product);
+
+        foreach ($tableData as $product) {
+            echo $product->id .' - ' . $product->product_name .'<br >';
+            if($product->is_avaliable){
+            echo $product->created_at .'<br >';
+
+            }
+        }
+
 
         return "All Products";
     }
