@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -11,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+
         return "All Products";
     }
 
@@ -65,4 +66,38 @@ class ProductController extends Controller
     {
         //
     }
+    
+    /**
+     * 
+     * DB Class 
+     */
+
+    // https://laravel.com/docs/12.x/queries
+
+        // $productsData = DB::table('products')->inRandomOrder()->limit(2)->get();
+
+        // $insertedStatus = DB::table('products')->insert([
+
+        // 'product_name' => 'inserted from laravel',
+        // 'price'=> 10,
+        // 'description' => 'lorem apsum',
+        // 'stock' => 12,
+
+        // 'created_at' => now(),
+        // 'updated_at' => now(),
+
+        // ]);
+
+
+        // $updatedStatus = DB::table('products')->where('id','=',5)->update([
+
+        // 'description'=>'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores tempore quae repellendus similique totam impedit aliquid vitae magni nihil at, commodi aliquam, modi laudantium vero, veniam officiis sunt ab consequatur?'
+
+        // ]);
+
+        // $deletedStatus = DB::table('products')->delete('2');
+
+
+
+        // dd($deletedStatus);
 }
