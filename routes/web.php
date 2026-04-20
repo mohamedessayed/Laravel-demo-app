@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -16,3 +17,9 @@ use App\Http\Controllers\ProductController;
 // Route::get('/posts/{id}',[PostController::class,'show'])->where('id','[0-9]+');
 
 // Route::resource('products',ProductController::class);
+
+
+
+Route::get('/',[HomeController::class,'index'])->name('home');
+
+Route::get('/login',[HomeController::class,'login'])->name('auth.login');

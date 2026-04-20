@@ -8,11 +8,22 @@ class HomeController extends Controller
 {
     //
 
+    // public function oldindex () {
+
+    // $name = "mohamed";
+    // $age = 36;
+
+    // return view('wlecome', ['userName'=>$name,'userAge'=>$age,'isUser'=>false,'records'=>[10,5,9]]); 
+    // }
+
+
     public function index () {
 
-    $name = "mohamed";
-    $age = 36;
+        return view('index');
+    
+    }
 
-    return view('wlecome', ['userName'=>$name,'userAge'=>$age,'isUser'=>false,'records'=>[10,5,9]]); 
+    public function login() {
+        return view('auth.login');
     }
 }
